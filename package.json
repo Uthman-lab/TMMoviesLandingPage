@@ -1,0 +1,22 @@
+{
+  "name": "tmmovielandingpage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "copy-images": "cpx ./src/images/**/* ./dist/images",
+    "minify-html": "html-minifier-terser --input-dir ./src --output-dir ./dist --collapse-whitespace --remove-comments --minify-css true --minify-js true",
+    "minify-css": "cssnano ./src/style.css ./dist/style.min.css",
+    "minify-js": "terser ./src/script.js -o ./dist/script.min.js",
+    "build": "npm run minify-html && npm run minify-css && npm run minify-js && npm run copy-images"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "cssnano": "^7.0.6",
+    "html-minifier-terser": "^7.2.0",
+    "terser": "^5.37.0"
+  }
+}
